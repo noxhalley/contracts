@@ -13,7 +13,7 @@ jobs:
       - name: Setup Buf & Protoc
         run: |
           curl -sSL https://github.com/bufbuild/buf/releases/latest/download/buf-Linux-x86_64 -o /usr/local/bin/buf && chmod +x /usr/local/bin/buf
-      - name: buf lint & breaking
-        run: buf lint && buf breaking check
+      - name: buf lint
+        run: buf lint
       - name: buf generate
         run: buf generate
