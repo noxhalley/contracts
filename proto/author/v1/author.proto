@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "github.com/noxhalley/contracts/gen/go/author/v1;authorv1";
+
 package author.v1;
 
 import "google/protobuf/empty.proto";
@@ -10,17 +12,11 @@ message Author {
   int32 age = 3;
 }
 
-message GetAuthorRequest {
-  int32 id = 1;
-}
+message GetAuthorRequest { int32 id = 1; }
 
-message GetAuthorResponse {
-  Author author = 1;
-}
+message GetAuthorResponse { Author author = 1; }
 
-message ListAuthorsResponse {
-  repeated Author authors = 1;
-}
+message ListAuthorsResponse { repeated Author authors = 1; }
 
 service AuthorService {
   rpc GetAuthor(GetAuthorRequest) returns (GetAuthorResponse) {}
