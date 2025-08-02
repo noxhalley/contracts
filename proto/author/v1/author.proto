@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/noxhalley/contracts/gen/go/author/v1;authorv1";
+option java_package = "org.noxhalley.contracts.author.v1";
 
 package author.v1;
 

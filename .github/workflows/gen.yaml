@@ -6,14 +6,23 @@ on:
       - 'v*.*.*'
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Buf & Protoc
         run: |
           curl -sSL https://github.com/bufbuild/buf/releases/latest/download/buf-Linux-x86_64 -o /usr/local/bin/buf && chmod +x /usr/local/bin/buf
+
       - name: buf lint
         run: buf lint
+
       - name: buf generate
         run: buf generate
+
+      - name: publish
+        run: bash ./scripts/build.sh
+        env: 
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          VERSION: ${{ github.ref_name }}
