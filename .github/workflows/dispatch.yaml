@@ -1,4 +1,4 @@
-nane: Dispatch on push
+name: Dispatch on push
 
 on:
   push:
