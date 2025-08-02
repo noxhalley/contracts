@@ -24,6 +24,6 @@ jobs:
           client-payload: |
             {
               "ref": "${{ github.ref }}",
-              "sha": "${{ github.sha }}"
+              "sha": "${{ github.sha }}",
               "version": "${{ github.ref_name }}"
             }
