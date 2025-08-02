@@ -7,7 +7,7 @@ on:
 
 jobs:
   dispatch-multi:
-    runs-on: ubuntu‑latest  
+    runs-on: ubuntu-latest  
     strategy:
       matrix:
         repo: [ 'noxhalley/contracts-go' ]
