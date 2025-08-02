@@ -1,0 +1,27 @@
+name: Dispatch on push
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  dispatch-multi:
+    runs-on: ubuntu-latest  
+    strategy:
+      matrix:
+        repo: [ 'noxhalley/contracts-go' ]
+    steps:
+      - name: test step 1
+        run: echo "test step 1"
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.K2_PAT }}
+          repository: ${{ matrix.repo }}
+          event-type: proto-schema-updated
+          client-payload: |
+            {
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}",
+              "version": "${{ github.ref_name }}"
+            }
