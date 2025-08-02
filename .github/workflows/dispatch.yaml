@@ -13,6 +13,8 @@ jobs:
         repo:
           - noxhalley/contracts-go
     steps:
+      - name: test step 1
+        run: echo "test step 1"
       - uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.K2_PAT }}
