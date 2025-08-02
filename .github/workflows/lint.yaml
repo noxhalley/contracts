@@ -1,4 +1,4 @@
-name: Buf Generate
+name: Linting
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,12 +17,3 @@ jobs:
 
       - name: buf lint
         run: buf lint
-
-      - name: buf generate
-        run: buf generate
-
-      - name: publish
-        run: bash ./scripts/build.sh
-        env: 
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          VERSION: ${{ github.ref_name }}

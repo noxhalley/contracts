@@ -14,9 +14,9 @@ plugins:
       - paths=source_relative
 
   - remote: buf.build/grpc/java
-    out: ./gen/java
+    out: ./gen/contracts-java/src/main/java
 
   - remote: buf.build/protocolbuffers/java:v25.3
-    out: ./gen/java
+    out: ./gen/contracts-java/src/main/java
 inputs:
   - directory: proto
