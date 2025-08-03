@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/noxhalley/contracts/gen/go/book/v1;bookv1";
+option java_package = "org.noxhalley.contracts.book.v1";
+
+package book.v1;
+
+message Book {
+  int32 id = 1;
+  string name = 2;
+}
+
+message GetBookRequest { int32 id = 1; }
+
+message GetBookResponse { Book book = 1; }
+
+service BookService {
+  rpc GetBook(GetBookRequest) returns (GetBookResponse) {}
+}

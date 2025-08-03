@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest  
     strategy:
       matrix:
-        repo: [ 'noxhalley/contracts-go' ]
+        repo:
+          - 'noxhalley/contracts-go'
     steps:
       - name: test step 1
         run: echo "test step 1"
