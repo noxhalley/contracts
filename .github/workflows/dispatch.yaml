@@ -12,6 +12,7 @@ jobs:
       matrix:
         repo:
           - 'noxhalley/contracts-go'
+          - 'noxhalley/contracts-java'
     steps:
       - name: test step 1
         run: echo "test step 1"
