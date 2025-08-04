@@ -5,6 +5,8 @@ option java_package = "org.noxhalley.contracts.book.v1";
 
 package book.v1;
 
+import "google/protobuf/empty.proto";
+
 message Book {
   int32 id = 1;
   string name = 2;
@@ -14,6 +16,9 @@ message GetBookRequest { int32 id = 1; }
 
 message GetBookResponse { Book book = 1; }
 
+message ListBooksResponse { repeated Book books = 1; }
+
 service BookService {
   rpc GetBook(GetBookRequest) returns (GetBookResponse) {}
+  rpc ListBooks(google.protobuf.Empty) returns (ListBooksResponse) {}
 }
