@@ -13,6 +13,7 @@ jobs:
         repo:
           - 'noxhalley/contracts-go'
           - 'noxhalley/contracts-java'
+          - 'noxhalley/contracts-rs'
     steps:
       - name: test step 1
         run: echo "test step 1"
