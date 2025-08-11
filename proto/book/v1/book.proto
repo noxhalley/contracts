@@ -10,6 +10,7 @@ import "google/protobuf/empty.proto";
 message Book {
   int32 id = 1;
   string name = 2;
+  string publisher = 3;
 }
 
 message GetBookRequest { int32 id = 1; }
